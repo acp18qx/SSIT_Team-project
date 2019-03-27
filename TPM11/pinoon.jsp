@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title>
+Robotic Competition
+</title>
+</head>
+<body class="main">
+
+
+ <div class="toptab">
+  
+  <a href="index.jsp">Home</a>
+  <a href="leaderboard.jsp">Leaderboard</a>
+  <a href="schedule.jsp">Schedule</a>
+ <%
+
+String username=(String)session.getAttribute("username");
+String role=(String)session.getAttribute("role");
+ 
+        if(username==null){
+			%>
+			<a href="login.jsp">Login</a>
+         </div>  
+		 <%
+       }
+		else if(role.equals("1")){
+    %>
+	<a href="panel.jsp">DashBoard</a>
+  <a href="registration.jsp">Registration</a>
+  <a href="registered.jsp">Registered Users</a>
+		<% }
+		else{%>
+			  <a href="marking.jsp">Dashboard</a>
+			  <%
+		}
+		if(username!=null) {
+		%>
+  
+  <div class="dropdown2">
+    <button class="dropbtn2">Marking
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown2-content">
+      <a href="hubble.jsp">Hubble</a>
+      <a href="canyons.jsp">Canyons</a>
+      <a href="speedtest.jsp">Speed Test</a>
+	  <a href="pinoon.jsp">Pi-noon</a>
+      <a href="spaceinvaders.jsp">Space Invaders</a>
+      <a href="spirit.jsp">Spirit of Curiosity</a>
+	  <a href="obstacle.jsp">Obstacle Course</a>
+	  <% if(!role.equals("2"))
+	  {
+		  %>
+	  <a href="#">Blogging</a>
+	  <a href="#">Technical Merit</a>
+	  <a href="#">Artisitic Merit</a>
+	  <a href="#">Most Space Aged Robot</a>
+	  <% } %>
+	  
+    </div>
+  </div>
+   <a href="logout.jsp">Logout</a>
+  </div>
+  
+        <h3 align="center">Hi, <%=username %> </h3>
+		
+    <%
+        }
+ 
+       
+        %>
+
+
+<u><h2>Pi-Noon</h2></u>
+<div class="form1" id="form1m">
+<form style="width:60%">
+<div class="form-group">
+    <label >Team 1</label>
+   
+     <select class="form-group" id="controlmethod" style="width:200px;">
+	 <option value="challengers">Challengers</option>
+  
+  <option value="topbridge">Top Bridge</option>
+  
+</select> 
+</div>
+<div id="formIn">
+<div class="form-group">
+<label >Team 2</label>
+<select class="form-group" id="controlmethod"  style="width:200px;">
+	 <option value="silver">Silver Warriors</option>
+  <option value="shooters">Shooters</option>
+</select> 
+</div>
+
+<div class="form-group">
+    <label >Select Round: </label>
+	<select class="form-group" id="controlmethod"  style="width:200px;">
+	 <option value="silver">Round 1</option>
+  <option value="shooters">Round 2</option>
+   <option value="silver">Semi Final</option>
+  <option value="shooters">Final</option>
+</select>
+   
+   </div>
+<div class="form-group">
+    <label >Teams Arrived : </label>
+    <input type="radio" name="zonecount" value="yes" style="transform: scale(1.5);"> Both &nbsp;
+  <input type="radio" name="zonecount" value="no" style="transform: scale(1.5);"> Team 1 &nbsp;
+   <input type="radio" name="zonecount" value="yes" style="transform: scale(1.5);"> Team 2 &nbsp;
+</div>
+
+<div class="form-group">
+    <label >Winner</label>
+    </br>
+     <select class="form-group" id="controlmethod">
+	 <option value="challengers">Challengers</option>
+  <option value="silver">Silver Warriors</option>
+  <option value="shooters">Shooters</option>
+  <option value="topbridge">Top Bridge</option>
+  
+</select>
+</div>
+
+
+  
+  </form>
+   </div>
+ </br>
+<button type="submit" class="btn btn-primary" onclick="myFunction()">Submit</button>
+ 
+</div>
+</body>
+</html>

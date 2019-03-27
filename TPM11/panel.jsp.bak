@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="styles2.css" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title>
+Robotic Competition
+</title>
+</head>
+<body class="main">
+
+
+ <div class="toptab">
+  
+  <a href="index.jsp">Home</a>
+  <a href="leaderboard.jsp">Leaderboard</a>
+  <a href="schedule.jsp">Schedule</a>
+  <a class="active" href="panel.jsp">DashBoard</a>
+  <a href="registration.jsp">Registration</a>
+  <a href="registered.jsp">Registered Users</a>
+  <div class="dropdown2">
+    <button class="dropbtn2">Marking
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown2-content">
+      <a href="hubble.jsp">Hubble</a>
+      <a href="canyons.jsp">Canyons</a>
+      <a href="marking.jsp">Speed Test</a>
+	  
+    </div>
+  </div>
+  <a href="logout.jsp">Logout</a>
+ 
+  
+</div> 
+ <%
+        String username=(String)session.getAttribute("username");
+        String role=(String)session.getAttribute("role");
+        
+        if(username==null || !(role.equals("1"))){
+            %>
+			<script>
+			window.location.href = "login.jsp";
+			</script>
+			<%
+        }
+		else {
+    %>
+        <h3 align="center">Hi, <%=username %></h3>
+    <%
+        }
+ 
+       
+        %>
+
+
+<table id="table2" align="center">
+  
+  <tr>
+      <td > <button class="btnn" onClick="func1()"><img src="img/marking.png" width="100px" height="100px"></i>Marking</button>
+ <script type="text/javascript" language="JavaScript">
+                  function func1()
+            {
+
+                window.location = 'marking.jsp'
+
+            }
+             </script></td>
+    <td ><button class="btnn" onClick="func2()"><img src="img/registration.png" width="100px" height="100px">Registration</button>
+ <script type="text/javascript" language="JavaScript">
+                  function func2()
+            {
+
+                window.location = 'registration.jsp'
+
+            }
+             </script>
+            </td>
+			</td>
+    <td ><button class="btnn" onClick="func3()"><img src="img/scorebreak.png" width="100px" height="100px">Score BreakDown</button>
+ <script type="text/javascript" language="JavaScript">
+                  function func3()
+            {
+
+                window.location = 'scorebreak.jsp'
+
+            }
+             </script>
+            </td>
+			
+			</tr>
+			<tr >
+      <td > <button class="btnn" onClick="func4()"><img src="img/challenge.png" width="100px" height="100px">Challenges</button>
+ <script type="text/javascript" language="JavaScript">
+                  function func4()
+            {
+
+                window.location = 'challengeprogress.jsp'
+
+            }
+             </script></td>
+    <td ><button class="btnn" onClick="func5()"><img src="img/changescore.png" width="100px" height="100px">Change Score</button>
+ <script type="text/javascript" language="JavaScript">
+                  function func5()
+            {
+
+                window.location = 'changescore.jsp'
+
+            }
+             </script>
+            </td>
+			</td>
+    <td ><button class="btnn" onClick="func2()"><img src="img/locatejudge.jpg" width="100px" height="100px">Judge Actions</button>
+ <script type="text/javascript" language="JavaScript">
+                  function func6()
+            {
+
+                window.location = 'judgeactions.jsp'
+
+            }
+             </script>
+            </td>
+			
+			</tr>
+			
+			
+</table>
+
+
+
+</body>
+</html>

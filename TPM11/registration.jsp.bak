@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<title>
+Robotic Competition
+</title>
+</head>
+<body class="main">
+
+
+ <div class="toptab">
+   
+   <a href="index.jsp">Home</a>
+  <a href="leaderboard.jsp">Leaderboard</a>
+  <a href="schedule.jsp">Schedule</a>
+  <a href="panel.jsp">DashBoard</a>
+  <a class="active" href="registration.jsp">Registration</a>
+   <a href="registered.jsp">Registered Users</a>
+  <div class="dropdown2">
+    <button class="dropbtn2">Marking
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown2-content">
+      <a href="hubble.jsp">Hubble</a>
+      <a href="canyons.jsp">Canyons</a>
+      <a href="speedtest.jsp">Speed Test</a>
+	  <a href="pinoon.jsp">Pi-noon</a>
+      <a href="spaceinvaders.jsp">Space Invaders</a>
+      <a href="spirit.jsp">Spirit of Curiosity</a>
+	  <a href="obstacle.jsp">Obstacle Course</a>
+	  <a href="#">Blogging</a>
+	  <a href="#">Technical Merit</a>
+	  <a href="#">Artisitic Merit</a>
+	  <a href="#">Most Space Aged Robot</a>
+	  
+    </div>
+  </div>
+  <a href="logout.jsp">Logout</a>
+  
+  
+</div> 
+
+<%
+        String username=(String)session.getAttribute("username");
+        
+        
+         if(username==null || !(role.equals("1"))){
+            %>
+			<script>
+			window.location.href = "login.jsp";
+			</script>
+			<%
+        }
+		else {
+    %>
+        <h3 align="center">Hi, <%=username %> </h3>
+    <%
+        }
+ 
+       
+        %>
+
+<u><h2>Registration </h2></u>
+<div class="form1">
+<form style="width:60%" action="register.jsp" method="post">
+<div class="form-group">
+    <label>Full Name</label>
+    <input type="text" class="form-control" id="Name" placeholder="Enter Full Name">
+</div>
+<div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" id="username" name="username" placeholder="Enter User Name" required>
+</div>
+<div class="form-group">
+    <label>Role</label>
+	</br>
+     <select class="form-group" id="role" name="role">
+	 <option value="1">Admin</option>
+  <option value="2">Judge</option>
+  <option value="3">Marshall</option>
+  
+</select> 
+</div>
+  <div class="form-group">
+    <label>Gender</label>
+	</br>
+     <select class="form-group" id="role">
+	 <option value="male">Male</option>
+  <option value="female">Female</option>
+  
+</select> 
+</div>
+<div class="form-group" id="dateofbirth">
+    <label>Date Of Birth</label>
+    <input type="Date" class="form-control" id="exampleInputDate" >
+</div>
+  <div class="form-group">
+    <label>Email address</label>
+    <input type="email" class="form-control" id="Email1" aria-describedby="emailHelp" placeholder="Enter email">
+</div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" id="Password1" name="password" placeholder="Enter Your Password" required>
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" id="Password2" placeholder="Enter your Password Again">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</body>
+</html>
