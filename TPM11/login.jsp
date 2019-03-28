@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>
-Robotic Competition
+Robotic Competition(PI WAR)
 </title>
 </head>
 <body class="main">
